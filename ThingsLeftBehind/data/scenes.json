@@ -1,0 +1,26 @@
+{
+	"scenes": {
+		"streetSuburban": {
+			"description": "residential suburban street",
+			"affOwners": ["commercial", "commuter", "elderly", "parent", "professional", "teen", "worker"],
+			"affVehicles": ["commercial", "economy", "family", "pickup", "sedan", "truck"],
+			"state": ["abandoned", "parked", "wrecked"],
+			"stateBias": {
+				"abandoned": 0.02,
+				"parked": 0.93,
+				"wrecked": 0.05
+			}
+		},
+		"streetUrban": {
+			"description": "urban street",
+			"affOwners": ["commercial", "commuter", "professional", "student", "worker"],
+			"affVehicles": ["commercial", "economy", "family", "sedan", "sports"],
+			"state": ["abandoned", "parked", "wrecked"],
+			"stateBias": {
+				"abandoned": 0.06,
+				"parked": 0.87,
+				"wrecked": 0.07
+			}
+		}
+	}
+}
