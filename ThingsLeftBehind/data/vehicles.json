@@ -74,6 +74,106 @@
 				"visible": true
 			}
 		},
+		"1950chevroletbelair": {
+			"yearStart": 1950,
+			"yearEnd": 1954,
+			"make": "Chevrolet",
+			"model": "Bel Air",
+			"trim": {},
+			"type": "showoff",
+			"trans": ["automatic"],
+			"ignt": "key",
+			"power": "gasoline",
+			"capTank": 16.0,
+			"capBatt": null,
+			"color": {
+				"beige": 0.09,
+				"black": 0.07,
+				"black and seafoam": 0.07,
+				"burgundy": 0.05,
+				"dark-and-medium gray": 0.06,
+				"dark gray and pale yellow": 0.08,
+				"dark green and seafoam": 0.09,
+				"dark red": 0.06,
+				"eggshell": 0.05,
+				"eggshell and blue": 0.09,
+				"medium-and-dark gray": 0.05,
+				"seafoam": 0.11,
+				"white and seafoam": 0.11
+			},
+			"storVisorDriv": {
+				"capacity": 1,
+				"visible": false
+			},
+			"storVisorPass": {
+				"capacity": 1,
+				"visible": false
+			},
+			"storGloveBox": {
+				"capacity": 4,
+				"visible": false
+			},
+			"storAsh": {
+				"capacity": 2,
+				"visible": false
+			},
+			"storRearWell": {
+				"capacity": 6,
+				"visible": false
+			},
+			"storTrunk": {
+				"capacity": 7,
+				"visible": false
+			},
+			"seatFDriv": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatFCent": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatFPass": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatRDriv": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatRCent": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatRPass": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatUnderFDriv": {
+				"capacity": 4,
+				"visible": false
+			},
+			"seatUnderFPass": {
+				"capacity": 4,
+				"visible": false
+			},
+			"hangRearviewCent": {
+				"exists": true,
+				"visible": true
+			},
+			"hangShifter": {
+				"exists": true,
+				"visible": true
+			},
+			"hangStalksSignals": {
+				"exists": true,
+				"visible": true
+			},
+			"hangStalksWipers": {
+				"exists": true,
+				"visible": true
+			}
+		},
 		"1958ramblerambassador": {
 			"yearStart": 1958,
 			"yearEnd": 1961,

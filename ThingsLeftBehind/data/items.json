@@ -115,7 +115,7 @@
       "comRepeat": 0.15,
       "affOwner": ["parent", "teen"],
       "affVehicle": ["economy", "family", "offroad", "pickup", "sedan"],
-      "affStorage": ["seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass", "trunk"],
+      "affStorage": ["seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass", "storTrunk"],
       "variants": [
         {
           "type": "autographed",
@@ -150,13 +150,13 @@
     },
     "baseballcap": {
       "name": "baseball cap",
-      "category": "clothing_head",
+      "category": "wearable_head",
       "size": 3,
       "comBase": 0.23,
       "comRepeat": 0.05,
       "affOwner": ["student", "teen", "trucker"],
       "affVehicle": ["family", "offroad", "pickup", "showoff", "truck"],
-      "affStorage": ["storCenConTray", "storCenCon", "seatFDriv", "seatFCent", "seatFPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "trunk"],
+      "affStorage": ["storCenConTray", "storCenCon", "seatFDriv", "seatFCent", "seatFPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "storTrunk"],
       "variants": [
         {
           "type": "camouflage",
@@ -326,11 +326,11 @@
       "name": "beer",
       "category": "consumable_drink",
       "size": 3,
-      "comBase": 0.02,
+      "comBase": 0.04,
       "comRepeat": 0.7,
-      "affOwner": ["student", "trucker", "worker"],
+      "affOwner": ["student", "trucker", "user", "worker"],
       "affVehicle": ["economy", "offroad", "pickup", "sports", "truck"],
-      "affStorage": ["seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass", "trunk"],
+      "affStorage": ["seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass", "storTrunk"],
       "variants": [
         {
           "type": "bottle of",
@@ -347,7 +347,7 @@
       ],
       "itmState": {
         "empty": {
-          "comState": 0.2
+          "comState": 0.94
         },
         "unopened": {
           "comState": 0.05,
@@ -704,9 +704,101 @@
         }
       }
     },
+    "camera": {
+      "name": "camera",
+      "category": "consumeritem",
+      "size": 4,
+      "comBase": 0.03,
+      "comRepeat": 0.02,
+      "affOwner": ["parent", "professional", "student", "traveler"],
+      "affVehicle": ["family", "offroad", "sedan", "showoff", "sports"],
+      "affStorage": ["storGloveBox", "storCenCon", "storCenConR", "storRearCompDriv", "storRearCompPass", "storTrunk"],
+      "variants": [
+        {
+          "type": "box",
+          "start": 1950,
+          "end": 1965,
+          "comVari": 0.3
+        },
+        {
+          "type": "digital SLR",
+          "start": 2007,
+          "end": 2050,
+          "power": {
+            "type": "DC",
+            "battery": "LiON",
+            "number": 1,
+            "replaceable": true
+          },
+          "comVari": 0.2
+        },
+        {
+          "type": "disposable",
+          "start": 1994,
+          "end": 2009,
+          "comVari": 0.7
+        },
+        {
+          "type": "medium-format",
+          "start": 1950,
+          "end": 1984,
+          "comVari": 0.2
+        },
+        {
+          "type": "mirrorless",
+          "start": 2017,
+          "end": 2050,
+          "power": {
+            "type": "DC",
+            "battery": "LiON",
+            "number": 1,
+            "replaceable": true
+          },
+          "comVari": 0.1
+        },
+        {
+          "type": "point-and-shoot digital",
+          "start": 2001,
+          "end": 2011,
+          "power": {
+            "type": "AC"
+          },
+          "comVari": 0.6
+        },
+        {
+          "type": "point-and-shoot analog",
+          "start": 1950,
+          "end": 2005,
+          "comVari": 0.8
+        },
+        {
+          "type": "Polaroid instant camera",
+          "start": 1974,
+          "end": 1993,
+          "comVari": 0.8
+        },
+        {
+          "type": "SLR",
+          "start": 1965,
+          "end": 2007,
+          "comVari": 0.2
+        }
+      ],
+      "itmState": {
+        "pristine": {
+          "comState": 0.5
+        },
+        "worn": {
+          "comState": 0.4
+        },
+        "damaged": {
+          "comState": 0.1
+        }
+      }
+    },
     "facemask": {
       "name": "mask",
-      "category": "clothing_face",
+      "category": "wearable_face",
       "size": 2,
       "comBase": 0.25,
       "comRepeat": 0.75,
@@ -768,7 +860,7 @@
           "start": 1950,
           "end": 2010,
           "power": {
-            "type": "battery",
+            "type": "DC",
             "battery": "C",
             "number": 3,
             "replaceable": true
@@ -780,7 +872,7 @@
           "start": 2008,
           "end": 2050,
           "power": {
-            "type": "battery",
+            "type": "DC",
             "battery": "C",
             "number": 3,
             "replaceable": true
@@ -793,10 +885,10 @@
           "comState": 0.5
         },
         "heavy-duty": {
-          "comState": 0.4
-        },
-        "tactical": {
           "comState": 0.1
+        },
+        "quality": {
+          "comState": 0.4
         }
       }
     },
@@ -892,7 +984,7 @@
           "start": 2009,
           "end": 2050,
           "power": {
-            "type": "battery",
+            "type": "DC",
             "battery": "LiON",
             "number": 1,
             "replaceable": false
@@ -904,7 +996,7 @@
           "start": 1960,
           "end": 2003,
           "power": {
-            "type": "battery",
+            "type": "DC",
             "battery": "AA",
             "number": 4,
             "replaceable": true
@@ -1085,7 +1177,7 @@
       "comRepeat": 0.24,
       "affOwner": ["parent", "prepper", "trucker"],
       "affVehicle": ["economy", "family", "sedan", "truck"],
-      "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenConTray", "storCenCon", "storCenConR", "trunk"],
+      "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenConTray", "storCenCon", "storCenConR", "storTrunk"],
       "variants": [
         {
           "type": "box of baby",
@@ -1133,7 +1225,7 @@
     },
     "workgloves": {
       "name": "work glove",
-      "category": "clothing_hands",
+      "category": "wearable_hands",
       "size": 2,
       "comBase": 0.09,
       "comRepeat": 0.5,
@@ -1211,8 +1303,8 @@
       "name": "wrapper",
       "category": "junk",
       "size": 2,
-      "comBase": 0.20,
-      "comRepeat": 0.85,
+      "comBase": 0.30,
+      "comRepeat": 0.65,
       "affOwner": ["commercial", "commuter", "parent", "rideshare", "student", "teen", "traveler", "trucker", "worker"],
       "affVehicle": ["family", "offroad", "pickup", "sedan", "truck"],
       "affStorage": ["storCenCupHold", "storDoorFDriv", "storDoorFPass", "storDoorRDriv", "storDoorRPass", "storTDriv", "storTPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
@@ -1227,6 +1319,17 @@
           "start": 1987,
           "end": 2050,
           "comVari": 0.2
+        },
+        {
+          "type": "gum",
+          "spawnGroup": {
+            "mode": "bunch",
+            "min": 3,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.7
         },
         {
           "type": "hamburger",

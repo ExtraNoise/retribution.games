@@ -1,8 +1,19 @@
 {
 	"scenes": {
+		"streetRural": {
+			"description": "rural residential street",
+			"affOwners": ["carguru", "commercial", "elderly", "parent", "prepper", "teen", "user", "worker"],
+			"affVehicles": ["commercial", "economy", "family", "offroad", "pickup", "showoff", "truck"],
+			"state": ["abandoned", "parked", "wrecked"],
+			"stateBias": {
+				"abandoned": 0.01,
+				"parked": 0.94,
+				"wrecked": 0.05
+			}
+		},
 		"streetSuburban": {
-			"description": "residential suburban street",
-			"affOwners": ["commercial", "commuter", "elderly", "parent", "professional", "teen", "worker"],
+			"description": "suburban residential street",
+			"affOwners": ["carguru", "commercial", "commuter", "elderly", "parent", "professional", "teen", "worker"],
 			"affVehicles": ["commercial", "economy", "family", "pickup", "sedan", "truck"],
 			"state": ["abandoned", "parked", "wrecked"],
 			"stateBias": {
@@ -13,7 +24,7 @@
 		},
 		"streetUrban": {
 			"description": "urban street",
-			"affOwners": ["commercial", "commuter", "professional", "student", "worker"],
+			"affOwners": ["commercial", "commuter", "esoteric", "professional", "student", "user", "worker"],
 			"affVehicles": ["commercial", "economy", "family", "sedan", "sports"],
 			"state": ["abandoned", "parked", "wrecked"],
 			"stateBias": {
