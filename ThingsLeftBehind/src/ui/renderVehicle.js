@@ -45,6 +45,7 @@ const AN_EXCEPTIONS = [
 ];
 
 const A_EXCEPTIONS = [
+  "usable",
   "used"
 ];
 
