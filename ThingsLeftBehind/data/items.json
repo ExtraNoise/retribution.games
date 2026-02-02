@@ -107,6 +107,42 @@
         }
       }
     },
+    "bankcard": {
+      "name": "card",
+      "category": "personal",
+      "size": 1,
+      "comBase": 0.14,
+      "comRepeat": 0.04,
+      "affOwner": ["prepper", "professional", "trucker"],
+      "affVehicle": ["economy", "pickup", "sedan", "sports", "truck"],
+      "affStorage": ["storVisorDriv", "storVisorPass", "storGloveBox", "storGloveBoxUp", "storCenCon", "storCenConSm"],
+      "variants": [
+        {
+          "type": "credit",
+          "start": 1965,
+          "end": 2050,
+          "comVari": 0.5
+        },
+        {
+          "type": "debit",
+          "start": 1979,
+          "end": 2050,
+          "comVari": 0.6
+        }
+      ],
+      "itmState": {
+        "valid": {
+          "comState": 0.6,
+          "decay": 0,
+          "ord": 0
+        },
+        "expired": {
+          "comState": 0.4,
+          "decay": 720,
+          "ord": 1
+        }
+      }
+    },
     "baseball": {
       "name": "baseball",
       "category": "toy",
@@ -153,7 +189,7 @@
       "category": "wearable_head",
       "size": 3,
       "comBase": 0.23,
-      "comRepeat": 0.05,
+      "comRepeat": 0.02,
       "affOwner": ["student", "teen", "trucker"],
       "affVehicle": ["family", "offroad", "pickup", "showoff", "truck"],
       "affStorage": ["storCenConTray", "storCenCon", "seatFDriv", "seatFCent", "seatFPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "storTrunk"],
@@ -219,7 +255,7 @@
           "comVari": 0.2
         },
         {
-          "type": "red political",
+          "type": "red",
           "start": 2016,
           "end": 2025,
           "comVari": 0.1
@@ -326,8 +362,8 @@
       "name": "beer",
       "category": "consumable_drink",
       "size": 3,
-      "comBase": 0.04,
-      "comRepeat": 0.7,
+      "comBase": 0.13,
+      "comRepeat": 0.85,
       "affOwner": ["student", "trucker", "user", "worker"],
       "affVehicle": ["economy", "offroad", "pickup", "sports", "truck"],
       "affStorage": ["seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass", "storTrunk"],
@@ -622,8 +658,8 @@
       "name": "business card",
       "category": "personal",
       "size": 1,
-      "comBase": 0.24,
-      "comRepeat": 0.14,
+      "comBase": 0.21,
+      "comRepeat": 0.09,
       "affOwner": ["commercial", "commuter", "elderly", "parent", "professional", "rideshare"],
       "affVehicle": ["commercial", "economy", "family", "pickup", "sedan", "sports"],
       "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenTray", "storCenConTray", "storCenCon", "storDoorFDriv", "storDoorFPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
@@ -639,12 +675,6 @@
           "start": 1970,
           "end": 2050,
           "comVari": 0.5
-        },
-        {
-          "type": "detective's",
-          "start": 1950,
-          "end": 2015,
-          "comVari": 0.1
         },
         {
           "type": "handyman's",
@@ -663,6 +693,12 @@
           "start": 1950,
           "end": 2015,
           "comVari": 0.6
+        },
+        {
+          "type": "police detective's",
+          "start": 1950,
+          "end": 2015,
+          "comVari": 0.1
         },
         {
           "type": "police officer's",
@@ -796,12 +832,100 @@
         }
       }
     },
+    "cards": {
+      "name": "cards",
+      "category": "consumeritem",
+      "size": 2,
+      "comBase": 0.08,
+      "comRepeat": 0,
+      "affOwner": ["elderly", "parent", "prepper", "student", "trucker", "worker"],
+      "affVehicle": ["economy", "family", "offroad", "pickup", "sedan", "truck"],
+      "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenCon", "storCenConSm", "storRearCompDriv", "storRearCompPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
+      "variants": [
+        {
+          "type": "playing",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.9
+        },
+        {
+          "type": "tarot",
+          "start": 1976,
+          "end": 2050,
+          "comVari": 0.1
+        }
+      ],
+      "itmState": {
+        "deck of": {
+          "comState": 0.6
+        },
+        "deck of fancy": {
+          "comState": 0.05
+        },
+        "deck of lewd": {
+          "comState": 0.05
+        },
+        "deck of oversized": {
+          "comState": 0.05
+        },
+        "deck of specialty": {
+          "comState": 0.05
+        },
+        "completely empty box of": {
+          "comState": 0.1
+        },
+        "half deck of": {
+          "comState": 0.1
+        }
+      }
+    },
+    "carphone": {
+      "name": "car phone",
+      "category": "electronic",
+      "size": 4,
+      "comBase": 0.25,
+      "comRepeat": 0,
+      "affOwner": ["commercial", "commuter", "professional"],
+      "affVehicle": ["sedan", "sports"],
+      "affStorage": ["storCenTray", "storCenConTray", "storCenCon"],
+      "variants": [
+        {
+          "type": "touchtone",
+          "start": 1981,
+          "end": 1995,
+          "comVari": 0.5
+        },
+        {
+          "type": "wireless",
+          "start": 1996,
+          "end": 2002,
+          "comVari": 0.6
+        }
+      ],
+      "itmState": {
+        "functioning": {
+          "comState": 0.93,
+          "decay": 0,
+          "ord": 0
+        },
+        "malfunctioning": {
+          "comState": 0.05,
+          "decay": 720,
+          "ord": 1
+        },
+        "non-functional": {
+          "comState": 0.02,
+          "decay": 2140,
+          "ord": 2
+        }
+      }
+    },
     "facemask": {
       "name": "mask",
       "category": "wearable_face",
       "size": 2,
-      "comBase": 0.25,
-      "comRepeat": 0.75,
+      "comBase": 0.16,
+      "comRepeat": 0.65,
       "affOwner": ["commercial", "parent", "rideshare", "teen", "trucker", "worker"],
       "affVehicle": ["commercial", "economy", "family", "truck"],
       "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenTray", "storCenCupHold", "storCenConTray", "storCenCon", "storDoorFDriv", "seatUnderFDriv", "hangRearviewCent", "hangShifter", "hangStalksWipers"],
@@ -969,12 +1093,89 @@
         }
       }
     },
+    "playingcard": {
+      "name": "playing card",
+      "category": "consumeritem",
+      "size": 1,
+      "comBase": 0.04,
+      "comRepeat": 0.1,
+      "affOwner": ["elderly", "parent", "prepper", "professional", "student", "trucker", "worker"],
+      "affVehicle": ["economy", "family", "offroad", "pickup", "sedan", "showoff", "sports", "truck"],
+      "affStorage": ["storVisorDriv", "storVisorPass", "storGloveBox", "storGloveBoxUp", "storCenCon", "storCenConSm", "storRearCompDriv", "storRearCompPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
+      "variants": [
+        {
+          "type": "hearts",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.25
+        },
+        {
+          "type": "diamonds",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.9
+        },
+        {
+          "type": "clubs",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.9
+        },
+        {
+          "type": "spades",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.9
+        }
+      ],
+      "itmState": {
+        "ace of": {
+          "comState": 0.10
+        },
+        "two of": {
+          "comState": 0.07
+        },
+        "three of": {
+          "comState": 0.07
+        },
+        "four of": {
+          "comState": 0.07
+        },
+        "five of": {
+          "comState": 0.07
+        },
+        "six of": {
+          "comState": 0.07
+        },
+        "seven of": {
+          "comState": 0.07
+        },
+        "eight of": {
+          "comState": 0.07
+        },
+        "nine of": {
+          "comState": 0.07
+        },
+        "ten of": {
+          "comState": 0.07
+        },
+        "jack of": {
+          "comState": 0.09
+        },
+        "queen of": {
+          "comState": 0.09
+        },
+        "king of": {
+          "comState": 0.09
+        }
+      }
+    },
     "portablespeaker": {
       "name": "speaker",
       "category": "electronic",
       "size": 3,
       "comBase": 0.19,
-      "comRepeat": 0.04,
+      "comRepeat": 0.01,
       "affOwner": ["commercial", "parent", "professional", "student", "traveler", "trucker"],
       "affVehicle": ["commercial", "economy", "family", "offroad", "pickup", "showoff", "truck"],
       "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenCon", "storCenConR", "storDoorFDriv", "seatUnderFDriv", "seatUnderFPass", "storTrunk"],
@@ -1152,7 +1353,7 @@
         }
       ],
       "itmState": {
-        "current": {
+        "unexpired": {
           "comState": 0.9,
           "decay": 0,
           "ord": 0
@@ -1302,13 +1503,19 @@
     "wrapper": {
       "name": "wrapper",
       "category": "junk",
-      "size": 2,
-      "comBase": 0.30,
+      "size": 1,
+      "comBase": 0.26,
       "comRepeat": 0.65,
       "affOwner": ["commercial", "commuter", "parent", "rideshare", "student", "teen", "traveler", "trucker", "worker"],
       "affVehicle": ["family", "offroad", "pickup", "sedan", "truck"],
       "affStorage": ["storCenCupHold", "storDoorFDriv", "storDoorFPass", "storDoorRDriv", "storDoorRPass", "storTDriv", "storTPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
       "variants": [
+        {
+          "type": "bandaid",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.45
+        },
         {
           "type": "breakfast sandwich",
           "spawnGroup": {
@@ -1367,7 +1574,10 @@
       ],
       "itmState": {
         "crumpled": {
-          "comState": 1.0
+          "comState": 0.7
+        },
+        "wrinkled": {
+          "comState": 0.3
         }
       }
     }

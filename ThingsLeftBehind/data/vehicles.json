@@ -15,13 +15,13 @@
 			"color": {
 				"black": 0.12,
 				"blue": 0.07,
-				"brick red": 0.08,
+				"brick-red": 0.08,
 				"dark brown": 0.07,
 				"light gray": 0.08,
 				"light yellow": 0.08,
 				"olive drab": 0.1,
 				"red": 0.12,
-				"seafoam green": 0.12,
+				"seafoam-green": 0.12,
 				"tan": 0.08,
 				"turquoise": 0.08
 			},
@@ -194,8 +194,8 @@
 				"light gray": 0.05,
 				"light green": 0.08,
 				"pale yellow": 0.06,
-				"slate blue": 0.08,
-				"sky blue": 0.09,
+				"slate-blue": 0.08,
+				"sky-blue": 0.09,
 				"white-and-beige": 0.11,
 				"white-and-blue": 0.08,
 				"white-and-bronze": 0.04,
@@ -642,16 +642,16 @@
 			"color": {
 				"black": 0.11,
 				"blue": 0.06,
-				"brick red": 0.05,
+				"brick-red": 0.05,
 				"brown": 0.08,
 				"dark blue": 0.03,
 				"dark green": 0.05,
-				"forest green": 0.08,
+				"forest-green": 0.08,
 				"gold": 0.05,
 				"gray": 0.05,
-				"olive green": 0.13,
+				"olive-green": 0.13,
 				"red": 0.15,
-				"slate blue": 0.03,
+				"slate-blue": 0.03,
 				"teal": 0.05,
 				"white": 0.08
 			},
@@ -1023,6 +1023,295 @@
 				"visible": true
 			}
 		},
+		"2018chevroletequinox": {
+			"yearStart": 2018,
+			"yearEnd": 2024,
+			"make": "Chevrolet",
+			"model": "Equinox",
+			"trim": {
+				"LS": 0.7,
+				"LT": 0.3
+			},
+			"type": "family",
+			"trans": ["automatic"],
+			"ignt": "fob",
+			"power": "gasoline",
+			"capTank": 14.9,
+			"capBatt": null,
+			"color": {
+				"black": 0.1,
+				"bright metallic blue": 0.05,
+				"champagne": 0.05,
+				"dark blue": 0.05,
+				"dark gray": 0.15,
+				"forest-green": 0.05,
+				"metallic orange": 0.1,
+				"red": 0.15,
+				"rose-gold": 0.05,
+				"silver": 0.15,
+				"white": 0.1
+			},
+			"storGlasses": {
+				"capacity": 2,
+				"visible": false
+			},
+			"storVisorDriv": {
+				"capacity": 1,
+				"visible": false
+			},
+			"storVisorPass": {
+				"capacity": 1,
+				"visible": false
+			},
+			"storGloveBox": {
+				"capacity": 4,
+				"visible": false
+			},
+			"storCenTray": {
+				"capacity": 2,
+				"visible": true
+			},
+			"storCenCupHold": {
+				"capacity": 4,
+				"visible": true
+			},
+			"storCenConTray": {
+				"capacity": 2,
+				"visible": true
+			},
+			"storCenCon": {
+				"capacity": 5,
+				"visible": false
+			},
+			"storDoorFDriv": {
+				"capacity": 4,
+				"visible": true
+			},
+			"storDoorFPass": {
+				"capacity": 4,
+				"visible": true
+			},
+			"storDoorRDriv": {
+				"capacity": 4,
+				"visible": true
+			},
+			"storDoorRPass": {
+				"capacity": 4,
+				"visible": true
+			},
+			"storRearWell": {
+				"capacity": 6,
+				"visible": false
+			},
+			"storRearCompDriv": {
+				"capacity": 3,
+				"visible": false
+			},
+			"storTrunk": {
+				"capacity": 9,
+				"visible": true
+			},
+			"seatFDriv": {
+				"capacity": 8,
+				"visible": true
+			},
+			"seatFPass": {
+				"capacity": 8,
+				"visible": true
+			},
+			"seatRDriv": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatRCent": {
+				"capacity": 5,
+				"visible": true
+			},
+			"seatRPass": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatUnderFDriv": {
+				"capacity": 3,
+				"visible": false
+			},
+			"seatUnderFPass": {
+				"capacity": 3,
+				"visible": false
+			},
+			"seatUnderRDriv": {
+				"capacity": 3,
+				"visible": false
+			},
+			"seatUnderRCent": {
+				"capacity": 3,
+				"visible": false
+			},
+			"seatUnderRPass": {
+				"capacity": 3,
+				"visible": false
+			},
+			"hangRearviewCent": {
+				"exists": true,
+				"visible": true
+			},
+			"hangShifter": {
+				"exists": true,
+				"visible": true
+			},
+			"hangStalksSignals": {
+				"exists": true,
+				"visible": true
+			},
+			"hangStalksWipers": {
+				"exists": true,
+				"visible": true
+			},
+			"hangDoorRDriv": {
+				"exists": true,
+				"visible": true
+			},
+			"hangDoorRPass": {
+				"exists": true,
+				"visible": true
+			}
+		},
+		"2020teslamodely": {
+			"yearStart": 2020,
+			"yearEnd": 2026,
+			"make": "Tesla",
+			"model": "Model Y",
+			"trim": {
+				"Standard": 0.6,
+				"Premium": 0.3,
+				"Performance": 0.1
+			},
+			"type": "family",
+			"trans": ["automatic"],
+			"ignt": "card",
+			"power": "electric",
+			"capTank": null,
+			"capBatt": 260.0,
+			"color": {
+				"black": 0.35,
+				"dark gray": 0.2,
+				"red": 0.1,
+				"royal-blue": 0.1,
+				"white": 0.25
+			},
+			"storVisorDriv": {
+				"capacity": 1,
+				"visible": false
+			},
+			"storVisorPass": {
+				"capacity": 1,
+				"visible": false
+			},
+			"storGloveBox": {
+				"capacity": 4,
+				"visible": false
+			},
+			"storCenTray": {
+				"capacity": 2,
+				"visible": true
+			},
+			"storCenCupHold": {
+				"capacity": 4,
+				"visible": true
+			},
+			"storCenConTray": {
+				"capacity": 3,
+				"visible": false
+			},
+			"storCenCon": {
+				"capacity": 4,
+				"visible": false
+			},
+			"storDoorFDriv": {
+				"capacity": 3,
+				"visible": true
+			},
+			"storDoorFPass": {
+				"capacity": 3,
+				"visible": true
+			},
+			"storDoorRDriv": {
+				"capacity": 3,
+				"visible": true
+			},
+			"storDoorRPass": {
+				"capacity": 3,
+				"visible": true
+			},
+			"storRearWell": {
+				"capacity": 5,
+				"visible": false
+			},
+			"storRearCompDriv": {
+				"capacity": 3,
+				"visible": true
+			},
+			"storRearCompPass": {
+				"capacity": 3,
+				"visible": true
+			},
+			"storTrunk": {
+				"capacity": 8,
+				"visible": true
+			},
+			"storFrunk": {
+				"capacity": 5,
+				"visible": false
+			},
+			"seatFDriv": {
+				"capacity": 8,
+				"visible": true
+			},
+			"seatFPass": {
+				"capacity": 8,
+				"visible": true
+			},
+			"seatRDriv": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatRCent": {
+				"capacity": 6,
+				"visible": true
+			},
+			"seatRPass": {
+				"capacity": 7,
+				"visible": true
+			},
+			"seatUnderFDriv": {
+				"capacity": 4,
+				"visible": false
+			},
+			"seatUnderFPass": {
+				"capacity": 4,
+				"visible": false
+			},
+			"hangRearviewCent": {
+				"exists": true,
+				"visible": true
+			},
+			"hangStalksSignals": {
+				"exists": true,
+				"visible": true
+			},
+			"hangStalksWipers": {
+				"exists": true,
+				"visible": true
+			},
+			"hangDoorRDriv": {
+				"exists": true,
+				"visible": true
+			},
+			"hangDoorRPass": {
+				"exists": true,
+				"visible": true
+			}
+		},
 		"2021toyotasienna": {
 			"yearStart": 2021,
 			"yearEnd": 2026,
@@ -1045,12 +1334,12 @@
 				"black": 0.1,
 				"bronze": 0.05,
 				"dark gray": 0.1,
-				"forest green": 0.1,
+				"forest-green": 0.1,
 				"gloss gray": 0.05,
 				"metallic red": 0.15,
 				"metallic white": 0.25,
 				"silver": 0.05,
-				"slate blue": 0.05,
+				"slate-blue": 0.05,
 				"white": 0.1
 			},
 			"storGlasses": {

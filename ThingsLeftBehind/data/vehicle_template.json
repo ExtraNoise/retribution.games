@@ -124,11 +124,11 @@
 			},
 			"seatRDriv": {
 				"capacity": 7,
-				"visible": false
+				"visible": true
 			},
 			"seatRCent": {
 				"capacity": null,
-				"visible": true
+				"visible": false
 			},
 			"seatRPass": {
 				"capacity": 7,
