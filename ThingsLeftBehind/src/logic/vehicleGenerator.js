@@ -85,7 +85,7 @@ export class VehicleGenerator {
     if (item.category === "consumable_food") {
       age = Math.floor(Math.random() * 8);
     } else {
-      age = Math.floor(Math.random() * 365);
+      age = Math.floor(Math.random() * 440);
     }
 
     age += elapsedDays;
@@ -243,7 +243,7 @@ export class VehicleGenerator {
 
     let remainingCapacity = capacityPointsFromSize(capacity);
 
-    if (storageKey.startsWith("seatUnder") && Math.random() > 0.85) return results;
+    if (storageKey.startsWith("seatUnder") && Math.random() > 0.95) return results;
     if (storageKey.startsWith("seat") && Math.random() > 0.35) return results;
 
     const fullness = Math.random();
