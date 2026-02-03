@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Things Left Behind</title>
-  <link rel="icon" href="/img/favicon.ico">
+  <link rel="icon" href="./img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -23,6 +23,9 @@
       padding: 0;
       width: 100%;
       height: 100%;
+    }
+
+    body {
       background: #131717;
       background: linear-gradient(340deg, rgba(19, 23, 23, 1) 0%, rgba(36, 40, 46, 1) 35%, rgba(43, 55, 59, 1) 100%);
       color: #BAC7CC;
@@ -37,6 +40,10 @@
       font-size: 0.9rem;
       font-style: normal;
       font-weight: 400;
+    }
+
+    .hidden {
+      display: none !important;
     }
 
     #controls {
@@ -62,15 +69,25 @@
       display: flex;
     }
 
-    #generateBtn {
-      margin: 1vh 1vw;
+    #output {
+      width: 60vw;
+      text-wrap: auto;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: stretch;
+      gap: 10px;
+    }
 
+    #generateBtn { margin: 1vh 1vw; }
+
+    #generateBtn, .ctaPeek {
       box-shadow:inset 0px 1px 0px 0px #ffffff;
       background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
       background-color:#ededed;
       border-radius:6px;
       border:1px solid #dcdcdc;
       display:inline-block;
+      align-self: flex-start;
       cursor:pointer;
       color:#777777;
       font-family:Arial;
@@ -80,33 +97,44 @@
       text-decoration:none;
       text-shadow:0px 1px 0px #ffffff;
     }
-    #generateBtn:hover {
+    #generateBtn:hover, .ctaPeek:hover {
       background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
       background-color:#dfdfdf;
     }
-    #generateBtn:active {
+    #generateBtn:active, .ctaPeek:active {
       position:relative;
       top:1px;
     }
 
-    #output {
-      width: 70vw;
-      max-width: 780px;
-      text-wrap: auto;
+    .vehicle, .storage {
       display: flex;
       flex-flow: row wrap;
       align-content: stretch;
       gap: 10px;
     }
 
-    .vehicle, .location {
-      display: flex;
+    .instruct, .vehicle {
       flex-direction: column;
-      flex-grow: 6;
+      flex-grow: 1;
       padding: 1em;
       background: rgba(0,0,0,0.2);
       border-radius: 4px;
       border: 1px solid rgba(19, 23, 23, 1);
+      text-shadow: 1px 1px 2px #000;
+    }
+    .instruct {
+      text-align: center;
+    }
+
+    .location {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1em;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      border: 1px solid rgba(19, 23, 23, 1);
+      text-shadow: 1px 1px 2px #000;
     }
 
     .location .locationName {
@@ -228,11 +256,11 @@
   </div>
 
   <div id="panelGeneration">
-    <button id="generateBtn">Generate Vehicle</button>
+    <div id="generateBtn">Generate Vehicle</div>
   </div>
 
   <div id="panelOutput">
-    <div id="output">Click "Generate Vehicle" to begin…</div>
+    <div id="output">Initializing generator…</div>
   </div>
 
   <script type="module">
@@ -278,7 +306,7 @@
     setupGenerator()
       .then(ctx => {
         generatorContext = ctx;
-        outputEl.textContent = "Generator ready.";
+        outputEl.innerHTML = '<div class="instruct">Click &ldquo;Generate Vehicle&ldquo; to begin.<div>';
       })
       .catch(err => {
         outputEl.textContent = "Error initializing generator:\n" + err;
@@ -316,6 +344,18 @@
       }
 
       outputEl.innerHTML = renderVehicle(result, generatorContext.vehicleLabels);
+
+      const ctaPeek = outputEl.querySelector(".ctaPeek");
+      const vehiclePeek = outputEl.querySelector(".vehiclePeek");
+      const storage = outputEl.querySelector(".storage");
+
+      ctaPeek.addEventListener("click", () => {
+        if (!ctaPeek.classList.contains("hidden")) {
+          vehiclePeek.classList.remove("hidden");
+          storage.classList.remove("hidden");
+          ctaPeek.classList.add("hidden");
+        }
+      });
     });
   </script>
 </body>

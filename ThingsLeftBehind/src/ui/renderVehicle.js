@@ -121,6 +121,13 @@ function humanizeLocation(key, vehicleLabels) {
 }
 
 export function renderVehicle(vehicle, vehicleLabels = {}) {
+  const transmission = vehicle.transmission;
+  const transmissionPhrase = transmission
+    ? `${transmission}`
+    : null;
+
+  const transmissionArticle = getIndefiniteArticle(transmissionPhrase);
+
   if (!vehicle) {
     return "No vehicle generated.";
   }
@@ -131,12 +138,26 @@ export function renderVehicle(vehicle, vehicleLabels = {}) {
 
   // Vehicle Afar
   lines.push(
-    `<div class="vehicle">The ${vehicle.state} vehicle is a ${vehicle.color} ${vehicle.year} ${v.make} ${v.model}` +
-    (vehicle.trim ? ` ${vehicle.trim}` : "") +
-    `.</div>`
+    `<div class="vehicle">` +
+      `<div class="vehicleDescription">` +
+        `The ${vehicle.state} vehicle is a ${vehicle.color} ${vehicle.year} ${v.make} ${v.model}` +
+        (vehicle.trim ? ` ${vehicle.trim}` : "") +
+        `.` +
+      `</div>` +
+      `<button class="ctaPeek">Look Inside</button>`
   );
 
   // Vehicle Inside
+  lines.push(
+      `<div class="vehiclePeek hidden">` +
+        `Peeking inside, you can see it&rsquo;s` + 
+        (transmission ? ` ${transmissionArticle} ${transmission}` : "") +
+        `.` +
+      `</div>` +
+    `</div>` +
+    `<div class="storage hidden">`
+  );
+
   const contents = vehicle.contents;
 
   if (!contents || Object.keys(contents).length === 0) {
@@ -166,6 +187,10 @@ export function renderVehicle(vehicle, vehicleLabels = {}) {
       `</div>`
     );
   }
+
+  lines.push(
+    `</div>`
+  );
 
   return lines.join("\n");
 }

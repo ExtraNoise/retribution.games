@@ -45,10 +45,18 @@ export class VehicleGenerator {
      VARIANT + STATE SELECTION
   ------------------------------*/
 
-  chooseVariant(item) {
+  chooseVariant(item, vehicle) {
     const weightedVariants = {};
 
     for (const variant of item.variants) {
+      // HARD vehicle-era gate:
+      // If the vehicle is newer than the variant's end,
+      // this variant could never have existed in it.
+      if (variant.end && vehicle.yearStart > variant.end) {
+        continue;
+      }
+
+      // Soft time-based availability (invention + decay)
       const yearMultiplier = getYearMultiplier(
         this.worldTime.apocalypseYear,
         variant.start,
@@ -152,6 +160,23 @@ export class VehicleGenerator {
      STORAGE + HANGERS
   ------------------------------*/
 
+  getAllLocations(vehicle) {
+    const locations = {};
+
+    for (const [key, value] of Object.entries(vehicle)) {
+      if (
+        key.startsWith("stor") ||
+        key.startsWith("seat") ||
+        key.startsWith("seatUnder") ||
+        key.startsWith("hang")
+      ) {
+        locations[key] = value;
+      }
+    }
+
+    return locations;
+  }
+
   getStorageLocations(vehicle) {
     const storages = {};
 
@@ -204,7 +229,7 @@ export class VehicleGenerator {
 
       if (!item.affStorage || !item.affStorage.includes(hangerKey)) continue;
 
-      const variant = this.chooseVariant(item);
+      const variant = this.chooseVariant(item, vehicle);
       if (!variant) continue;
 
       const elapsedDays = this.worldTime.getElapsedDays();
@@ -274,7 +299,7 @@ export class VehicleGenerator {
 
       if (!roll(weight)) continue;
 
-      const variant = this.chooseVariant(item);
+      const variant = this.chooseVariant(item, vehicle);
       if (!variant) continue;
 
       const elapsedDays = this.worldTime.getElapsedDays();
@@ -352,35 +377,30 @@ export class VehicleGenerator {
       generated.contents[storageKey] = [];
     }
 
-    for (const hangerKey of Object.keys(vehicle.hangingPoints ?? {})) {
-      generated.contents[hangerKey] = [];
-    }
+    const locations = this.getAllLocations(vehicle);
 
-    const storages = this.getStorageLocations(vehicle);
-
-    // Initialize ALL storage locations as empty
-    for (const key of Object.keys(storages)) {
+    // Initialize all locations
+    for (const key of Object.keys(locations)) {
       generated.contents[key] = [];
     }
-    for (const key in storages) {
-      const items = this.populateStorageLocation(
-        key,
-        storages[key].capacity,
-        vehicle,
-        itemSpawnCounts
-      );
 
-      if (items.length > 0) {
-        generated.contents[key] = items;
-      }
-    }
+    // Populate locations
+    for (const key of Object.keys(locations)) {
+      let items = [];
 
-    const hangers = this.getHangingPoints(vehicle);
-    for (const key in hangers) {
-      const items = this.populateHanger(key, vehicle, itemSpawnCounts);
-      if (items.length > 0) {
-        generated.contents[key] = items;
+      if (key.startsWith("hang")) {
+        items = this.populateHanger(key, vehicle, itemSpawnCounts);
+      } else {
+        const capacity = locations[key].capacity ?? 0;
+        items = this.populateStorageLocation(
+          key,
+          capacity,
+          vehicle,
+          itemSpawnCounts
+        );
       }
+
+      generated.contents[key] = items;
     }
 
     return generated;

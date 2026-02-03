@@ -824,7 +824,7 @@
         "pristine": {
           "comState": 0.5
         },
-        "worn": {
+        "well-used": {
           "comState": 0.4
         },
         "damaged": {
@@ -962,10 +962,13 @@
       ],
       "itmState": {
         "clean": {
-          "comState": 0.2
+          "comState": 0.4
         },
-        "used": {
-          "comState": 0.8
+        "dirty": {
+          "comState": 0.5
+        },
+        "disgusting": {
+          "comState": 0.1
         }
       }
     },
@@ -1082,14 +1085,23 @@
         }
       ],
       "itmState": {
-        "pristine": {
-          "comState": 0.2
-        },
         "well-read": {
           "comState": 0.6
         },
+        "pristine": {
+          "comState": 0.3,
+          "decay": 0,
+          "ord": 0
+        },
+        "water-damaged": {
+          "comState": 0,
+          "decay": 2200,
+          "ord": 1
+        },
         "tattered": {
-          "comState": 0.2
+          "comState": 0.1,
+          "decay": 4280,
+          "ord": 2
         }
       }
     },
@@ -1289,14 +1301,23 @@
         }
       ],
       "itmState": {
-        "pristine": {
-          "comState": 0.2
-        },
         "well-read": {
-          "comState": 0.5
+          "comState": 0.6
+        },
+        "pristine": {
+          "comState": 0.3,
+          "decay": 0,
+          "ord": 0
+        },
+        "water-damaged": {
+          "comState": 0,
+          "decay": 2200,
+          "ord": 1
         },
         "tattered": {
-          "comState": 0.3
+          "comState": 0.1,
+          "decay": 4280,
+          "ord": 2
         }
       }
     },

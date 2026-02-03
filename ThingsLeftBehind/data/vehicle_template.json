@@ -183,35 +183,27 @@
 				"visible": false
 			},
 			"hangRearviewCent": {
-				"exists": true,
 				"visible": true
 			},
 			"hangShifter": {
-				"exists": true,
 				"visible": true
 			},
 			"hangStalksSignals": {
-				"exists": true,
 				"visible": true
 			},
 			"hangStalksWipers": {
-				"exists": true,
 				"visible": true
 			},
 			"hangDoorFDriv": {
-				"exists": false,
 				"visible": false
 			},
 			"hangDoorFPass": {
-				"exists": false,
 				"visible": false
 			},
 			"hangDoorRDriv": {
-				"exists": false,
 				"visible": false
 			},
 			"hangDoorRPass": {
-				"exists": false,
 				"visible": false
 			}
 		}
