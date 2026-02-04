@@ -121,16 +121,23 @@ function humanizeLocation(key, vehicleLabels) {
 }
 
 export function renderVehicle(vehicle, vehicleLabels = {}) {
-  const transmission = vehicle.transmission;
-  const transmissionPhrase = transmission
-    ? `${transmission}`
-    : null;
-
-  const transmissionArticle = getIndefiniteArticle(transmissionPhrase);
-
   if (!vehicle) {
     return "No vehicle generated.";
   }
+
+  const yearEra = Math.floor(vehicle.year / 10) * 10 + "s";
+
+  const color = vehicle.color;
+  const phraseColor = color
+    ? `${color}`
+    : null;
+  const articleColor = getIndefiniteArticle(phraseColor);
+
+  const transmission = vehicle.transmission;
+  const phraseTransmission = transmission
+    ? `${transmission}`
+    : null;
+  const articleTransmission = getIndefiniteArticle(phraseTransmission);
 
   const lines = [];
 
@@ -139,20 +146,31 @@ export function renderVehicle(vehicle, vehicleLabels = {}) {
   // Vehicle Afar
   lines.push(
     `<div class="vehicle">` +
-      `<div class="vehicleDescription">` +
-        `The ${vehicle.state} vehicle is a ${vehicle.color} ${vehicle.year} ${v.make} ${v.model}` +
+      `<div class="vehicleOverview">` +
+        `You see` +
+        (color ? ` ${articleColor} ${color}` : "") +
+        ` ${yearEra} ${v.class} that's been ${vehicle.state}.` +
+      `</div>` +
+      `<button class="ctaLook">Look Closer</button>`
+  );
+
+  // Vehicle Close
+  lines.push(
+      `<div class="vehicleDescription hidden">` +
+        `Looking closer, you determine the vehicle is a` + 
+        ` ${vehicle.year} ${v.make} ${v.model}` +
         (vehicle.trim ? ` ${vehicle.trim}` : "") +
         `.` +
       `</div>` +
-      `<button class="ctaPeek">Look Inside</button>`
+      `<button class="ctaPeek hidden">Look Inside</button>`
   );
 
   // Vehicle Inside
   lines.push(
       `<div class="vehiclePeek hidden">` +
-        `Peeking inside, you can see it&rsquo;s` + 
-        (transmission ? ` ${transmissionArticle} ${transmission}` : "") +
-        `.` +
+        `Peeking inside, you can see that it has` + 
+        (transmission ? ` ${articleTransmission} ${transmission}` : "") +
+        ` transmission.` +
       `</div>` +
     `</div>` +
     `<div class="storage hidden">`
@@ -174,7 +192,7 @@ export function renderVehicle(vehicle, vehicleLabels = {}) {
     let body;
 
     if (groups.length === 0) {
-      body = `<em>Empty.</em>`;
+      body = `<em>Nothing.</em>`;
     } else {
       const descriptions = groups.map(describeGroup);
       body = joinWithCommasAndAnd(descriptions);

@@ -78,9 +78,9 @@
       gap: 10px;
     }
 
-    #generateBtn { margin: 1vh 1vw; }
+    .ctaGenerate { margin: 1vh 1vw; }
 
-    #generateBtn, .ctaPeek {
+    .ctaGenerate, .ctaLook, .ctaPeek {
       box-shadow:inset 0px 1px 0px 0px #ffffff;
       background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
       background-color:#ededed;
@@ -97,11 +97,11 @@
       text-decoration:none;
       text-shadow:0px 1px 0px #ffffff;
     }
-    #generateBtn:hover, .ctaPeek:hover {
+    .ctaGenerate:hover, .ctaLook:hover, .ctaPeek:hover {
       background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
       background-color:#dfdfdf;
     }
-    #generateBtn:active, .ctaPeek:active {
+    .ctaGenerate:active, .ctaLook:active, .ctaPeek:active {
       position:relative;
       top:1px;
     }
@@ -256,7 +256,7 @@
   </div>
 
   <div id="panelGeneration">
-    <div id="generateBtn">Generate Vehicle</div>
+    <div id="generateBtn" class="ctaGenerate">Generate Vehicle</div>
   </div>
 
   <div id="panelOutput">
@@ -345,9 +345,19 @@
 
       outputEl.innerHTML = renderVehicle(result, generatorContext.vehicleLabels);
 
+      const ctaLook = outputEl.querySelector(".ctaLook");
+      const vehicleDescription = outputEl.querySelector(".vehicleDescription");
       const ctaPeek = outputEl.querySelector(".ctaPeek");
       const vehiclePeek = outputEl.querySelector(".vehiclePeek");
       const storage = outputEl.querySelector(".storage");
+
+      ctaLook.addEventListener("click", () => {
+        if (!ctaLook.classList.contains("hidden")) {
+          vehicleDescription.classList.remove("hidden");
+          ctaPeek.classList.remove("hidden");
+          ctaLook.classList.add("hidden");
+        }
+      });
 
       ctaPeek.addEventListener("click", () => {
         if (!ctaPeek.classList.contains("hidden")) {

@@ -189,7 +189,7 @@
       "category": "wearable_head",
       "size": 3,
       "comBase": 0.23,
-      "comRepeat": 0.02,
+      "comRepeat": 0.01,
       "affOwner": ["student", "teen", "trucker"],
       "affVehicle": ["family", "offroad", "pickup", "showoff", "truck"],
       "affStorage": ["storCenConTray", "storCenCon", "seatFDriv", "seatFCent", "seatFPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "storTrunk"],
@@ -255,7 +255,7 @@
           "comVari": 0.2
         },
         {
-          "type": "red",
+          "type": "political",
           "start": 2016,
           "end": 2025,
           "comVari": 0.1
@@ -920,6 +920,228 @@
         }
       }
     },
+    "carseat": {
+      "name": "seat",
+      "category": "vehicle",
+      "size": 6,
+      "comBase": 0.18,
+      "comRepeat": 0,
+      "affOwner": ["parent", "student", "teen", "worker"],
+      "affVehicle": ["economy", "family", "sedan"],
+      "affStorage": ["seatRDriv", "seatRPass", "storTrunk"],
+      "variants": [
+        {
+          "type": "booster",
+          "start": 2002,
+          "end": 2050,
+          "comVari": 0.2
+        },
+        {
+          "type": "child car",
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.8
+        }
+      ],
+      "itmState": {
+        "buckled-up": {
+          "comState": 0.1
+        },
+        "faded": {
+          "comState": 0.4
+        },
+        "stained": {
+          "comState": 0.1
+        },
+        "unsecured": {
+          "comState": 0.1
+        },
+        "upside-down": {
+          "comState": 0.1
+        },
+        "worn": {
+          "comState": 0.2
+        }
+      }
+    },
+    "cassettetape": {
+      "name": "tape",
+      "category": "consumeritem",
+      "size": 2,
+      "comBase": 0.37,
+      "comRepeat": 0.85,
+      "affOwner": ["commuter", "parent", "prepper", "professional", "rideshare", "student", "teen", "traveler", "trucker", "worker"],
+      "affVehicle": ["economy", "family", "offroad", "sedan", "showoff", "sports", "truck"],
+      "affStorage": ["storGloveBox", "storGloveBoxUp", "storCenTray", "storCenCupHold", "storCenConTray", "storCenCon", "storDoorFDriv", "storDoorFPass", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
+      "variants": [
+        {
+          "type": "eight-track",
+          "start": 1967,
+          "end": 1981,
+          "comVari": 0.6
+        },
+        {
+          "type": "cassette",
+          "start": 1978,
+          "end": 1996,
+          "comVari": 0.8
+        },
+        {
+          "type": "mix",
+          "start": 1984,
+          "end": 1999,
+          "comVari": 0.4
+        }
+      ],
+      "itmState": {
+        "cracked": {
+          "comState": 0.1
+        },
+        "grimy": {
+          "comState": 0.15
+        },
+        "hand-labeled": {
+          "comState": 0.25
+        },
+        "unlabeled": {
+          "comState": 0.2
+        },
+        "unopened": {
+          "comState": 0.2
+        },
+        "unwound": {
+          "comState": 0.1
+        }
+      }
+    },
+    "dollarbill": {
+      "name": "dollar bill",
+      "category": "personal",
+      "size": 1,
+      "comBase": 0.15,
+      "comRepeat": 0.41,
+      "affOwner": ["commuter", "eldery", "esoteric", "parent", "prepper", "professional", "student", "traveler"],
+      "affVehicle": ["family", "pickup", "sedan", "showoff", "sports"],
+      "affStorage": ["storGloveBox", "storGloveBoxUp", "storAsh", "storCenTray", "storCenCupHold", "storCenConTray", "storCenCon", "storCenConSm", "seatUnderFDriv", "seatUnderFCent", "seatUnderFPass", "seatUnderRDriv", "seatUnderRCent", "seatUnderRPass", "seatUnderTDriv", "seatUnderTCent", "seatUnderTPass"],
+      "variants": [
+        {
+          "type": "Silver-Certificate one",
+          "start": 1950,
+          "end": 1963,
+          "comVari": 0.1
+        },
+        {
+          "type": "one",
+          "spawnGroup": {
+            "mode": "bundle",
+            "min": 1,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.4
+        },
+        {
+          "type": "two",
+          "start": 1976,
+          "end": 2050,
+          "comVari": 0.05
+        },
+        {
+          "type": "Silver-Certificate five",
+          "start": 1950,
+          "end": 1963,
+          "comVari": 0.05
+        },
+        {
+          "type": "five",
+          "spawnGroup": {
+            "mode": "bundle",
+            "min": 1,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.2
+        },
+        {
+          "type": "ten",
+          "spawnGroup": {
+            "mode": "bundle",
+            "min": 1,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.2
+        },
+        {
+          "type": "twenty",
+          "spawnGroup": {
+            "mode": "bundle",
+            "min": 1,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.6
+        },
+        {
+          "type": "fifty",
+          "spawnGroup": {
+            "mode": "bundle",
+            "min": 1,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.1
+        },
+        {
+          "type": "hundred",
+          "spawnGroup": {
+            "mode": "bundle",
+            "min": 1,
+            "max": 8
+          },
+          "start": 1950,
+          "end": 2050,
+          "comVari": 0.04
+        },
+        {
+          "type": "five-hundred",
+          "start": 1950,
+          "end": 1969,
+          "comVari": 0.003
+        },
+        {
+          "type": "thousand",
+          "start": 1950,
+          "end": 1969,
+          "comVari": 0.0005
+        }
+      ],
+      "itmState": {
+        "crumpled": {
+          "comState": 0.14
+        },
+        "fresh": {
+          "comState": 0.28
+        },
+        "folded": {
+          "comState": 0.32
+        },
+        "heavily worn": {
+          "comState": 0.22
+        },
+        "ripped up": {
+          "comState": 0.02
+        },
+        "taped-together": {
+          "comState": 0.02
+        }
+      }
+    },
     "facemask": {
       "name": "mask",
       "category": "wearable_face",
@@ -1261,7 +1483,7 @@
           "type": "North American",
           "start": 1950,
           "end": 2030,
-          "comVari": 0.4
+          "comVari": 0.3
         },
         {
           "type": "offroad",
@@ -1273,19 +1495,25 @@
           "type": "Route 66",
           "start": 1970,
           "end": 2030,
-          "comVari": 0.05
+          "comVari": 0.02
+        },
+        {
+          "type": "spiral-bound state",
+          "start": 1991,
+          "end": 2013,
+          "comVari": 0.2
         },
         {
           "type": "state",
           "start": 1954,
           "end": 2030,
-          "comVari": 0.4
+          "comVari": 0.5
         },
         {
           "type": "trucker's",
           "start": 1954,
           "end": 2030,
-          "comVari": 0.1
+          "comVari": 0.05
         },
         {
           "type": "United States",
@@ -1297,7 +1525,7 @@
           "type": "United States radio station",
           "start": 1950,
           "end": 1986,
-          "comVari": 0.2
+          "comVari": 0.08
         }
       ],
       "itmState": {
@@ -1374,7 +1602,7 @@
         }
       ],
       "itmState": {
-        "unexpired": {
+        "valid": {
           "comState": 0.9,
           "decay": 0,
           "ord": 0

@@ -1200,7 +1200,7 @@
 				"Wagovan": 0.3
 			},
 			"type": "economy",
-			"class": "wagon",
+			"class": "compact",
 			"trans": ["automatic", "manual"],
 			"ignt": "key",
 			"power": "gasoline",
@@ -1450,7 +1450,7 @@
 				"visible": false
 			},
 			"storTrunk": {
-				"capacity": 6,
+				"capacity": 5,
 				"visible": true
 			},
 			"storFrunk": {
